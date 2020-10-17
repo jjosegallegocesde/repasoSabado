@@ -16,20 +16,40 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-6">
-                <form>
+                <form action="index.php" method="POST">
                     <div class="row">
                         <div class="col">
-                            <input type="number" class="form-control" placeholder="First name">
+                            <input type="number" class="form-control" placeholder="First name" name="numero1">
                             </div>
                             <div class="col">
-                            <input type="number" class="form-control" placeholder="Last name">
+                            <input type="number" class="form-control" placeholder="Last name" name="numero2">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-3">calcular</button>
+                    <button type="submit" class="btn btn-primary mt-3" name="botonCalcular">calcular</button>
                 </form>
+
+
+                <?php 
+                
+                    if(isset($_POST["botonCalcular"])){
+
+                        $n1=$_POST["numero1"];
+                        $n2=$_POST["numero2"];
+
+                        echo("La suma de los numeros ingresados es: ".($n1+$n2));
+                        
+                    }
+                
+                
+                
+                ?>
+
+
                 </div>
             </div>
         </div>
+
+
 
         
 
